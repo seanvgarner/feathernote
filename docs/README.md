@@ -23,8 +23,8 @@ sufficient CSS styling:
 - [ ] Rich-text Editing
 **Bonus Features**:
 - [ ] Auto Save
-- [ ] Infinite Scroll
 - [ ] Reminders
+- [ ] Searches
 
 
 ## Design Docs
@@ -48,20 +48,20 @@ sufficient CSS styling:
 
 ### Phase 2: Notes Model, API, and components (2 days)
 
-**Objective:** Notes can be created, read, edited and destroyed through
-the API.
+**Objective:** Notes can be created, read, edited and destroyed through the API.
 
-### Phase 3: Allow Rich-text editing in Notes (2 days)
-
-**objective:** Allow rich text editing of notes (probably using the quill library).
-
-### Phase 4: Notebooks (2 days)
+### Phase 3: Notebooks (2 days)
 
 **Objective:** Notes belong to Notebooks that can be created, read, edited and destroyed through the API.
 
-### Phase 5: Tags (2 days)
+### Phase 4: Tags (2 days)
 
 **Objective:** Notes can be tagged with multiple tags, and tags are searchable.
+
+### Phase 5: Allow Rich-text editing in Notes (2 days)
+
+**objective:** Allow rich text editing of notes (probably using the quill library).
+
 
 ### Bonus Features (TBD)
 - [ ] Auto save notes
