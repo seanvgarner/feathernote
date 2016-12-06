@@ -3,22 +3,21 @@ import { Link } from 'react-router';
 
 
 // redesign this presentational component to fit welcome spash page/ logget out view
-const WelcomeSplash = ({ currentUser, logout }) => {
-  if (currentUser) {
+const WelcomeSplash = ({ children }) => {
     return (
-    <nav className="welcome-nav">
-      <h3>Hi, { currentUser.email }</h3>
-      <button onClick={ logout }>Logout</button>
-    </nav>
+      <div className="content-container">
+        <nav className="sign-in-navbar">
+          <h1>FEATHERNOTE</h1>
+            <Link to='/login'>Log In</Link>
+        </nav>
+        { children ||
+          <div content="jumbotron-container">
+            <Link to='/signup' className="sign-up-btn">Sign Up</Link>
+          </div>}
+        <footer></footer>
+      </div>
+
     );
-  } else {
-    return (
-      <nav className="sign-in-nav">
-        <Link to='/signup'>Sign Up</Link>
-        <Link to='/login'>Log In</Link>
-      </nav>
-    );
-  }
 };
 
 export default WelcomeSplash;

@@ -17,7 +17,7 @@ class SessionForm extends React.Component {
 
   redirect() {
     if (this.props.loggedIn) {
-      this.props.router.push("/");
+      this.props.router.push("/home");
     }
   }
 
@@ -56,7 +56,7 @@ class SessionForm extends React.Component {
           <div className="login-form">
             <label>Email:
               <input type="text"
-                  value={ this.state.username }
+                  value={ this.state.email }
                   onChange={ this.update("email")}
                   className="login-input"/>
             </label>
