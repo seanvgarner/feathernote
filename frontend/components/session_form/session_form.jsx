@@ -8,7 +8,6 @@ class SessionForm extends React.Component {
       email: "",
       password: ""
     };
-    debugger
     this.handleSubmit = this.handleSubmit.bind(this);
     this.signInAsGuest = this.signInAsGuest.bind(this);
   }
