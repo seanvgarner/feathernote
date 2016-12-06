@@ -27,9 +27,9 @@ export function signup(user) {
   };
 }
 
-export function login(user) {
+export function signin(user) {
   return (dispatch) => {
-    return APIUtil.login(user).then(
+    return APIUtil.signin(user).then(
       (currentUser) => dispatch(receiveCurrentUser(currentUser)),
       (err) => dispatch(receiveErrors(err.responseJSON))
     );

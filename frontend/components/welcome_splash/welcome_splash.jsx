@@ -8,7 +8,7 @@ const WelcomeSplash = ({ children }) => {
       <div className="content-container">
         <nav className="sign-in-navbar">
           <h1>FEATHERNOTE</h1>
-            <Link to='/login'>Log In</Link>
+            <Link to='/signin'>Sign In</Link>
         </nav>
         { children ||
           <div content="jumbotron-container">
