@@ -18,6 +18,13 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6, allow_nil: true }
   after_initialize :ensure_session_token
 
+  has_many :notes,
+    primary_key: :id,
+    class_name: 'Note',
+    foreign_key: :author_id
+
+  has_many :notebooks
+
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
     user && user.valid_password?(password) ? user : nil
