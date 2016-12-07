@@ -38,13 +38,13 @@ class SessionForm extends React.Component {
     if (this.props.formType === 'signin') {
       return (
         <div className="nav-links">
-          <Link to="/signup">Sign Up</Link> or sign in as <a href="#" onClick={ this.signInAsGuest }>Guest</a>
+          <Link to="/signup" className="clickable">Sign Up</Link> <span>or sign in as</span> <a href="#" onClick={ this.signInAsGuest } className="clickable">Guest</a>
         </div>
       );
     } else {
       return (
         <div className="nav-links">
-          <Link to="/signin">Sign In</Link>
+          <Link to="/signin" className="clickable">Sign In</Link>
         </div>
       );
     }
@@ -63,36 +63,36 @@ class SessionForm extends React.Component {
 
   render() {
     const { formType } = this.props;
-    const formTitle = (formType === "signin") ? "Sign In" : "Sign Up";
+    const formTitle = (formType === "signin") ? "Sign in" : "Sign up";
 
     return (
       <div className="signin-form-container group">
-        <div className="logo-header group">
+        <div className="logo-header">
           <div className="logo-wrap">
             <img src={ window.featherLogo }></img>
           </div>
           <h2>{ formTitle }</h2>
         </div>
         <form className="signin-box" onSubmit={ this.handleSubmit }>
-          { this.renderErrors() }
-          <div className="signin-form">
-            <label>Email:
-              <input type="text"
-                  value={ this.state.email }
-                  onChange={ this.update("email")}
-                  className="signin-input"/>
-            </label>
-            <br/>
-            <label>Password:
-              <input type="password"
-                  value={ this.state.password }
-                  onChange={ this.update("password")}
-                  className="signin-input"/>
-            </label>
-            <input type="submit" className="signin-submit-btn" value="Submit"/>
-          </div>
-          { this.navLink() }
+          <div className="input-container group">
+            <div className="signin-form group">
+                <input type="text"
+                    value={ this.state.email }
+                    onChange={ this.update("email")}
+                    className="signin-input"
+                    placeholder="Email"/>
+                  <br/>
+                <input type="password"
+                    value={ this.state.password }
+                    onChange={ this.update("password")}
+                    className="signin-input"
+                    placeholder="Password"/>
+                  { this.renderErrors() }
+            </div>
+              <input type="submit" className="signin-submit-btn" value={ formTitle }/>
+            </div>
         </form>
+        { this.navLink() }
       </div>
     );
   }

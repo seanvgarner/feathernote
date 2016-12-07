@@ -2,23 +2,114 @@
   display: block;
   width: 100%;
   height: 100%;
-  padding: 80px 0 100px 0;
-  background-color: #eaeeef;
+  padding: 0 0 100px 0;
+  background-color: #eee;
+  border-top: 4px solid #2DBE60;
 }
 
 .logo-header {
+  display: block;
   margin-bottom: 26px;
-  margin-top: 68px;
+  margin-top: 30px;
 }
 
 .logo-wrap {
   width: 68px;
   margin: 0 auto;
+  margin-bottom: 19px;
+}
+
+.logo-header h2 {
+  display: block;
+  margin: 0 auto;
+  color: #6a6a6a;
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 32px;
 }
 
 .signin-box {
-  max-width: 384px;
+  width: 384px;
   margin: 0 auto;
   border: 1px solid #dedede;
   background-color: #fff;
+  border-radius: 2px;
+}
+
+.input-container {
+  margin: 32px;
+}
+
+.signin-form input {
+  line-height: 1.1875;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid #cacaca;
+  border-radius: 7px;
+  padding: 10px 1rem;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: 'Pontano Sans', sans-serif;
+}
+
+.signin-form input:focus {
+  outline: none;
+  border-color: #7aa7cf;
+  box-shadow: 0 0 0 1px #7aa7cf,0 0 4px 0 #3d96e3;
+}
+
+.signin-submit-btn {
+
+  width: 100%;
+  text-align: center;
+  padding: 11px;
+  display: block;
+  background-color: #2dbe60;
+  border: 1px solid #1b9848;
+  color: #fff;
+  border-radius: 7px;
+  opacity: 0.86;
+  margin-top: 32px;
+}
+
+.signin-submit-btn:hover {
+  cursor: pointer;
+  background-color: #28a956;
+}
+
+.input-container ul li {
+  font-family: 'Pontano Sans', sans-serif;
+  color: #b92219;
+  border: 1px solid #e4a197;
+  background-color: #ffd1d1;
+  padding: 6px 0 6px 17px;
+  font-size: 75%;
+}
+
+.nav-links {
+  margin-top: 28px;
+  display: block;
+  text-align: center;
+  color: #2dbe60;
+  font-family: 'Pontano Sans', sans-serif;
+  font-weight: 200;
+  font-size: 14px;
+}
+
+.nav-links span {
+  color: #6a6a6a;
+}
+
+.clickable {
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+  border-bottom: 1px solid transparent;
+}
+
+.clickable:hover {
+  color: #28a956;
+  border-bottom: 1px solid #28a956;
 }
