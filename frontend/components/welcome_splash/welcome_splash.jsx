@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import Jumbotron from './jumbotron';
 
 
 // redesign this presentational component to fit welcome spash page/ logget out view
@@ -17,17 +18,9 @@ const WelcomeSplash = ({ children }) => {
               <Link to='/signin' className="sign-in-link">Sign In</Link>
           </nav>
         </header>
-        { children ||
-          <div className="jumbotron-container">
-            <Link to='/signup' className="sign-up-btn">Sign Up</Link>
-            <div className="catch-phrase">
-              <h2>See everything...</h2>
-              <h3>That is right infront of you</h3>
-            </div>
-          </div>}
+        { children || <Jumbotron /> }
         <footer></footer>
       </div>
-
     );
 };
 

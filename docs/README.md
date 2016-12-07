@@ -5,7 +5,7 @@
 [Trello link][trello]
 
 [heroku]: https://feathernotes.herokuapp.com/#/signin
-[trello]: https://trello.com/b/5uNs3aSS
+[trello]: https://trello.com/b/5uNs3aSS/feathernote
 
 ## Minimum Viable Product
 

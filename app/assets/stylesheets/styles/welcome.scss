@@ -61,13 +61,26 @@
   height: 530px;
   background-image: image_url('Trendy-Office-Space.jpg');
   background-size: cover;
-  background-attachment: fixed;
-  // background-position: center center;
+  // background-attachment: fixed;
+}
+
+@media only screen and (min-width: 1300px) {
+  .jumbotron-container {
+    height: 650px;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .jumbotron-container {
+    width: 1500px;
+    margin: 0 auto;
+  }
 }
 
 .sign-up-btn {
   position: absolute;
-  top: 343px;
+  // top: 343px;
+  bottom: 87px;
   left: 412px;
   width: 140px;
   text-align: center;
@@ -76,7 +89,7 @@
   background-color: #2DBE60;
   color: #fff;
   border-radius: 7px;
-  opacity: 0.8;
+  opacity: 0.86;
 }
 
 .sign-up-btn:hover {
@@ -86,12 +99,12 @@
 .catch-phrase {
   display: block;
   position: absolute;
-  top: 148px;
+  bottom: 248px;
   left: 318px;
   width: 300px;
   color: #fff;
   font-family: 'Noto Serif', serif;
-  text-shadow: 2px 2px 4px grey;
+  text-shadow: 2px 2px 4px #696969;
 }
 
 .catch-phrase h2 {

@@ -66,9 +66,14 @@ class SessionForm extends React.Component {
     const formTitle = (formType === "signin") ? "Sign In" : "Sign Up";
 
     return (
-      <div className="signin-form-container">
-        <form className="signin-box" onSubmit={ this.handleSubmit }>
+      <div className="signin-form-container group">
+        <div className="logo-header group">
+          <div className="logo-wrap">
+            <img src={ window.featherLogo }></img>
+          </div>
           <h2>{ formTitle }</h2>
+        </div>
+        <form className="signin-box" onSubmit={ this.handleSubmit }>
           { this.renderErrors() }
           <div className="signin-form">
             <label>Email:
