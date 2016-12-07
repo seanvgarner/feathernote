@@ -1,0 +1,40 @@
+html, body, h1, h2, h3, p, ul, ol, div, span, a, button, input, textarea {
+  margin: 0;
+  padding: 0;
+
+  outline: none;
+  background: transparent;
+  border: none;
+
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  color: inherit;
+  text-decoration: inherit;
+}
+
+html,
+body {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  font-family: sans-serif;
+  font-size: 1.0625em;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.group:after {
+  display: block;
+  clear: both;
+  content: "";
+}
