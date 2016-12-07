@@ -14,12 +14,16 @@ const WelcomeSplash = ({ children }) => {
             <h1>FEATHERNOTE</h1>
           </div>
           <nav className="sign-in-navbar">
-              <Link to='/signin'>Sign In</Link>
+              <Link to='/signin' className="sign-in-link">Sign In</Link>
           </nav>
         </header>
         { children ||
-          <div content="jumbotron-container">
+          <div className="jumbotron-container">
             <Link to='/signup' className="sign-up-btn">Sign Up</Link>
+            <div className="catch-phrase">
+              <h2>See everything...</h2>
+              <h3>That is right infront of you</h3>
+            </div>
           </div>}
         <footer></footer>
       </div>

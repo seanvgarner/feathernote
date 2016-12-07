@@ -1,8 +1,10 @@
 .welcome-header {
   position: relative;
   display: block;
+  box-sizing: border-box;
   width: 100%;
   padding: 20px 15px;
+  height: 85px;
 }
 
 .logo-container {
@@ -30,8 +32,72 @@
 }
 
 .sign-in-navbar {
+  line-height: 47px;
   display: block;
   float: right;
+  width: 80px;
   height: 100%;
-  background-color: lightgrey;
+}
+
+.sign-in-link {
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: 'Pontano Sans', sans-serif;
+  border-bottom: 1px solid transparent;
+  color: #848484;
+}
+.sign-in-link:hover {
+  color: black;
+  border-bottom: 1px solid #696969;
+}
+
+.jumbotron-container {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 530px;
+  background-image: image_url('Trendy-Office-Space.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  // background-position: center center;
+}
+
+.sign-up-btn {
+  position: absolute;
+  top: 343px;
+  left: 412px;
+  width: 140px;
+  text-align: center;
+  padding: 15px;
+  display: block;
+  background-color: #2DBE60;
+  color: #fff;
+  border-radius: 7px;
+  opacity: 0.8;
+}
+
+.sign-up-btn:hover {
+  background-color: #28a956
+}
+
+.catch-phrase {
+  display: block;
+  position: absolute;
+  top: 148px;
+  left: 318px;
+  width: 300px;
+  color: #fff;
+  font-family: 'Noto Serif', serif;
+  text-shadow: 2px 2px 4px grey;
+}
+
+.catch-phrase h2 {
+  font-size: 38px;
+}
+
+.catch-phrase h3 {
+  font-size: 24px;
 }
