@@ -8,12 +8,14 @@ const WelcomeSplash = ({ children }) => {
     return (
       <div className="content-container group">
         <header className="welcome-header group">
-          <div className="logo-container group">
-            <div className="img-logo-wrapper">
-              <img src={ window.featherLogo }></img>
+          <Link to='/'>
+            <div className="logo-container group">
+              <div className="img-logo-wrapper">
+                <img src={ window.featherLogo }></img>
+              </div>
+              <h1>FEATHERNOTE</h1>
             </div>
-            <h1>FEATHERNOTE</h1>
-          </div>
+          </Link>
           <nav className="sign-in-navbar">
               <Link to='/signin' className="sign-in-link">Sign In</Link>
           </nav>
