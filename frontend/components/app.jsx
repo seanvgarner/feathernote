@@ -1,22 +1,18 @@
 import React from 'react';
 import SidebarContainer from './sidebar/sidebar_container';
 import NoteIndexContainer from './notes/note_index_container';
+import NoteDetailContainer from './notes/note_detail_container';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
 
-    this.logoutCurrentUser = this.logoutCurrentUser.bind(this);
   }
 
-  logoutCurrentUser(e) {
-    e.preventDefault();
-    this.props.logout().then(() => this.redirect());
+  componentWillMount() {
+    this.props.getAllNotes();
   }
 
-  redirect() {
-    this.props.router.push("/");
-  }
 
   // add note detail container after note index cont
   render() {
@@ -24,10 +20,9 @@ class App extends React.Component {
     if (currentUser) {
       return (
         <div className="main">
-          <SidebarContainer />
+          <SidebarContainer router={this.props.router}/>
           <NoteIndexContainer />
-          <h3>Hi, { currentUser.email }</h3>
-          <button onClick={ this.logoutCurrentUser }>Logout</button>
+          <NoteDetailContainer />
           { children }
         </div>
       );

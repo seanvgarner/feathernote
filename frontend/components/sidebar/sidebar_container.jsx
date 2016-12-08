@@ -3,8 +3,9 @@ import { logout } from '../../actions/session_actions';
 import { getAllNotes } from '../../actions/note_actions';
 import Sidebar from './sidebar';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return {
+    router: ownProps.router,
     currentUser: state.session.currentUser,
     notes: state.notes
   };

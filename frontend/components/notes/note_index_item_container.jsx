@@ -1,11 +1,12 @@
 import { connect } from 'react-redux';
-import { getAllNotes, getOneNote } from '../../actions/note_actions';
+import { getOneNote, saveNewNote } from '../../actions/note_actions';
 import { sortedNotes } from '../../reducers/selectors';
-import NoteIndex from './note_index';
+import NoteIndexItem from './note_index_item';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return {
     currentUser: state.session.currentUser,
+    note: ownProps.note,
     notes: sortedNotes(state)
   };
 };
@@ -19,4 +20,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(NoteIndex);
+)(NoteIndexItem);

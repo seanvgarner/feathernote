@@ -7,7 +7,7 @@ const Jumbotron = () => {
       <Link to='/signup' className="sign-up-btn">Sign Up</Link>
       <div className="catch-phrase">
         <h2>See everything...</h2>
-        <h3>Right infront of you</h3>
+        <h3>Right in front of you</h3>
       </div>
     </div>
   );

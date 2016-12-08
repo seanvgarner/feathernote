@@ -30,7 +30,7 @@ const Root = ({ store }) => {
           <Route path="/signin" component={ SessionFormContainer } onEnter={ _redirectIfLoggedIn }/>
           <Route path="/signup" component={ SessionFormContainer } onEnter={ _redirectIfLoggedIn}/>
         </Route>
-        <Route path="/home" component={ AppContainer } onEnter={ _ensureLoggedIn }/>
+        <Route path="/home" component={ AppContainer } onEnter={ _ensureLoggedIn } />
       </Router>
     </Provider>
   );
