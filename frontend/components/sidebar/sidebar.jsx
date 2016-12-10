@@ -14,8 +14,10 @@ class Sidebar extends React.Component {
 
   openNewNote(e) {
     e.preventDefault();
-    const dummyNote = { title: "", body: "", notebook_id: 1 };
-    this.props.switchNote(dummyNote);
+    const dummyNote = { title: "Title Your Note", body: "", notebook_id: 1 };
+    this.props.saveNewNote(dummyNote).then((response) => {
+      this.props.switchNote(response.note);
+    });
   }
 
 

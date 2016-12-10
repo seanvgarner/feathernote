@@ -39,7 +39,7 @@ class NoteDetail extends React.Component {
         this.props.saveNewNote(note);
       } else {
 
-        note = Object.assign({}, this.state, { title: "Untitled Note"});
+        note = Object.assign({}, this.state, { title: "Title Your Note"});
         this.props.saveNewNote(note);
       }
     }

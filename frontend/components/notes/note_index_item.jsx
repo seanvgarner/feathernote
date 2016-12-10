@@ -1,16 +1,19 @@
 import React from 'react';
 import Moment from 'moment';
+import { withRouter } from 'react-router';
 
 class NoteIndexItem extends React.Component {
   constructor(props) {
     super(props);
     this.switchToNote = this.switchToNote.bind(this);
+
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
-  // componentWillReceiveProps(newProps) {
-  //   debugger
-  //   this.props.getOneNote(newProps.notes[0].id);
-  // }
+  handleDelete(e) {
+    e.stopPropagation();
+    this.props.destroyNote(this.props.note);
+  }
 
   switchToNote(e) {
     this.props.switchNote(this.props.note);
@@ -35,7 +38,7 @@ class NoteIndexItem extends React.Component {
           <div className="item-title">
             { title }
           </div>
-          <div className="delete-note">
+          <div className="delete-note" onClick={ this.handleDelete }>
           </div>
           <div className="updated-at">
             { timeAgo }
@@ -49,4 +52,4 @@ class NoteIndexItem extends React.Component {
   }
 }
 
-export default NoteIndexItem;
+export default withRouter(NoteIndexItem);

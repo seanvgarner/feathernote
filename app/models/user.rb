@@ -23,7 +23,10 @@ class User < ActiveRecord::Base
     class_name: 'Note',
     foreign_key: :author_id
 
-  has_many :notebooks
+  has_many :notebooks,
+    primary_key: :id,
+    class_name: 'Notebook',
+    foreign_key: :author_id
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)

@@ -4,7 +4,6 @@ import NoteIndexItemContainer from './note_index_item_container';
 class NoteIndex extends React.Component {
   constructor(props) {
     super(props);
-
   }
 
 

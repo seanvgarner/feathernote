@@ -3,6 +3,7 @@ import *  as APIUtil from '../util/note_api_util';
 export const RECEIVE_ALL_NOTES = "RECEIVE_ALL_NOTES";
 export const RECEIVE_NOTE = "RECEIVE_NOTE";
 export const SWITCH_NOTE = "SWITCH_NOTE";
+export const REMOVE_NOTE = "REMOVE_NOTE";
 
 export const receiveAllNotes = (notes) => {
   return {
@@ -21,6 +22,13 @@ export const receiveNote = (note) => {
 export const switchNote = (note) => {
   return  {
     type: SWITCH_NOTE,
+    note
+  };
+};
+
+export const removeNote = (note) => {
+  return {
+    type: REMOVE_NOTE,
     note
   };
 };
@@ -53,6 +61,14 @@ export function updateNote(updatedNote) {
   return (dispatch) => {
     return APIUtil.updateNote(updatedNote).then(
       (note) => dispatch(receiveNote(note))
+    );
+  };
+}
+
+export function destroyNote(noteToDestroy) {
+  return (dispatch) => {
+    return APIUtil.destroyNote(noteToDestroy).then(
+      (note) => dispatch(removeNote(note))
     );
   };
 }
