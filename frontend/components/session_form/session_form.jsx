@@ -30,7 +30,8 @@ class SessionForm extends React.Component {
 
   signInAsGuest(e) {
     e.preventDefault();
-    const user = { email: "guest", password: "password" };
+
+    const user = {email: "guest", password: "password"};
     this.props.processForm(user).then(() => this.redirect());
   }
 
