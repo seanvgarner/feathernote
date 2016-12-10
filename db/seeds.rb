@@ -15,9 +15,11 @@ sean = User.create!(email: 'seangarner@gmail.com', password: '1234abcd')
 note1 = Note.create!(
   title: 'My First Note',
   body: 'In here I can write reminders for myself',
-  author_id: guest.id)
+  author_id: guest.id,
+  notebook_id: 1)
 
 note2 = Note.create!(
   title: 'Class Notes',
   body: 'Learn javascript, learn ruby, learn html, learn css, learn...sql?',
-  author_id: guest.id)
+  author_id: guest.id,
+  notebook_id: 1)
