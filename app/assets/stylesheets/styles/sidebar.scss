@@ -1,0 +1,118 @@
+
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+.main {
+  display: block;
+  height: 100vh;
+}
+
+h4 {
+  margin: 0;
+}
+
+
+
+.sidebar {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  float: left;
+  width: 73px;
+  padding: 12px 12px 24px 17px;
+  height: 100%;
+  border-right: 1px solid #ececec;
+  background-color: #f8f8f8;
+}
+
+.sb-container {
+  height: 900px;
+}
+
+.main-logo-wrapper {
+  width: 40px;
+  height: 88px;
+  float: left;
+}
+
+.icon {
+  margin: 6px 0;
+  display: block;
+  height: 40px;
+  width: 40px;
+  float: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: all 0.25s ease-in-out;
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+}
+
+.new-note-btn {
+  background-image: image_url("add-note.png");
+}
+
+.new-note-btn:hover {
+  background-image: image_url("add-note-hover.png");
+  cursor: pointer;
+}
+
+
+.search-btn {
+  margin-bottom: 80px;
+  background-image: image_url("search.png");
+}
+
+.search-btn:hover {
+  background-image: image_url("search-hover.png");
+  cursor: pointer;
+}
+
+.all-notes-btn {
+  background-image: image_url("all-notes.png");
+}
+
+.all-notes-btn:hover {
+  background-image: image_url("all-notes-hover.png");
+  cursor: pointer;
+}
+
+.notebooks-btn {
+  background-image: image_url("note-book.png");
+}
+
+.notebooks-btn:hover {
+  background-image: image_url("note-book-hover.png");
+  cursor: pointer;
+}
+
+.tags-btn {
+  background-image: image_url("tags.png");
+}
+
+.tags-btn:hover {
+  background-image: image_url("tags-hover.png");
+  cursor: pointer;
+}
+
+.logout {
+  margin-top: 15px;
+  margin-left: 15px;
+  background-image: image_url("logout.png");
+}
+
+.logout:hover {
+  cursor: pointer;
+}
+
+.logout-container {
+  position: fixed;
+  bottom: 12px;
+  left: 0;
+  border-top: 1px solid #ececec;
+  background-color: #f8f8f8;
+  width: 72px;
+}

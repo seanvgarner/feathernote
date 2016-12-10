@@ -6,10 +6,14 @@ import NoteDetailContainer from './notes/note_detail_container';
 class App extends React.Component {
   constructor(props) {
     super(props);
-
+    this.onUpdate = this.onUpdate.bind(this);
   }
 
   componentWillMount() {
+    this.props.getAllNotes();
+  }
+
+  onUpdate(noteChange) {
     this.props.getAllNotes();
   }
 
@@ -19,10 +23,10 @@ class App extends React.Component {
     const { children, currentUser, logout } = this.props;
     if (currentUser) {
       return (
-        <div className="main">
+        <div className="main group">
           <SidebarContainer router={this.props.router}/>
           <NoteIndexContainer />
-          <NoteDetailContainer />
+          <NoteDetailContainer onUpdate={ this.onUpdate }/>
           { children }
         </div>
       );

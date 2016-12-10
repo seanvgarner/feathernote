@@ -2,6 +2,7 @@ import *  as APIUtil from '../util/note_api_util';
 
 export const RECEIVE_ALL_NOTES = "RECEIVE_ALL_NOTES";
 export const RECEIVE_NOTE = "RECEIVE_NOTE";
+export const SWITCH_NOTE = "SWITCH_NOTE";
 
 export const receiveAllNotes = (notes) => {
   return {
@@ -13,6 +14,13 @@ export const receiveAllNotes = (notes) => {
 export const receiveNote = (note) => {
   return {
     type: RECEIVE_NOTE,
+    note
+  };
+};
+
+export const switchNote = (note) => {
+  return  {
+    type: SWITCH_NOTE,
     note
   };
 };

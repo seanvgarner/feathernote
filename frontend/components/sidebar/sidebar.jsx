@@ -4,11 +4,18 @@ class Sidebar extends React.Component {
   constructor(props) {
     super(props);
     this.logoutCurrentUser = this.logoutCurrentUser.bind(this);
+    this.openNewNote = this.openNewNote.bind(this);
   }
 
   logoutCurrentUser(e) {
     e.preventDefault();
     this.props.logout().then(() => this.redirect());
+  }
+
+  openNewNote(e) {
+    e.preventDefault();
+    const dummyNote = { title: "", body: "", notebook_id: 1 };
+    this.props.switchNote(dummyNote);
   }
 
 
@@ -21,16 +28,22 @@ class Sidebar extends React.Component {
     const { currentUser } = this.props;
     if (currentUser) {
       return (
-        <div>
-          <h4>I am the sidebar</h4>
-          <button>New Note</button>
-          <button>Search Note</button>
-          <button>All Notes</button>
-          <button>Note Books</button>
-          <button>Tags</button>
-
-          <h4>Hello, { this.props.currentUser.email }</h4>
-          <button onClick={ this.logoutCurrentUser }>Logout</button>
+        <div className="sidebar">
+          <div className="sb-containter group">
+            <div className="main-logo-wrapper group">
+              <img src={ window.featherLogo }></img>
+            </div>
+            <div onClick={ this.openNewNote } className="new-note-btn icon">
+            </div>
+            <div className="search-btn icon">
+            </div>
+            <div className="all-notes-btn icon"></div>
+            <div className="notebooks-btn icon"></div>
+            <div className="tags-btn icon"></div>
+            <div className="logout-container">
+              <div onClick={ this.logoutCurrentUser } className="logout icon"></div>
+            </div>
+          </div>
         </div>
       );
     } else {

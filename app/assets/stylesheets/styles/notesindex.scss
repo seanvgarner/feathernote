@@ -1,0 +1,144 @@
+.note-index {
+  float: left;
+  width: 350px;
+  height: 100vh;
+  display: block;
+  box-sizing: border-box;
+  border-right: 1px solid #ececec
+}
+
+.index-header {
+  display: block;
+  height: 95px;
+  border-bottom: 4px solid #ececec;
+  padding: 24px 20px 0 24px;
+}
+
+.index-header h4 {
+  font-weight: 300;
+  color: #878787;
+  text-transform: uppercase;
+  font-family: "Lato", sans-serif;
+  font-size: 24px;
+  line-height: 26px;
+  letter-spacing: 0.5px;
+}
+
+.sub-header {
+  display: block;
+  width: 100%;
+  margin-top: 40px;
+}
+
+.note-count {
+  font-weight: 300;
+  color: #878787;
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+}
+
+.index-list ul {
+  display: block;
+  height: 81vh;
+  overflow-y: auto;
+}
+
+.item {
+  position: relative;
+  width: 100%;
+  height: 120px;
+  box-sizing: border-box;
+  padding: 10px 20px 1px 20px;
+  background-color: #fff;
+  transition: background 0.25s ease-in-out;
+  -webkit-transition: background 0.25s ease-in-out;
+  -moz-transition: background 0.25s ease-in-out;
+}
+
+.selected-note {
+  border: 3px solid #d9d9d9;
+  padding-top: 7px;
+  padding-left: 17px;
+}
+
+.item:hover {
+  background-color: #37b058;
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.item:hover .item-title {
+  color: #fff;
+}
+
+.item:hover .updated-at {
+  color: #fff;
+}
+
+.item:hover .index-body {
+  color: #fff;
+}
+
+.list-container {
+  display: block;
+  height: 100%;
+  border-bottom: 1px solid #ececec;
+  float: left;
+}
+
+.item-title {
+  font-family: 'Noto Serif', serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #4a4a4a;
+  max-height: 40px;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: break-word;
+  line-height: 20px;
+  width: 270px;
+
+}
+
+.index-body {
+  margin-top: 13px;
+  width: 300px;
+  height: 46px;
+  color: #878787;
+  font-family: 'Lato',helvetica,arial,sans-serif;
+  font-size: 12px;
+  left: 24px;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  right: 24px;
+  top: 12px;
+  word-wrap: break-word;
+  bottom: 15px;
+}
+
+.updated-at {
+  color: #878787;
+  font-family: 'Lato',helvetica,arial,sans-serif;
+  font-size: 12px;
+  overflow-x: wrap;
+  overflow-y: hidden;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 5px;
+}
+
+.delete-note {
+  position: absolute;
+  width: 41px;
+  height: 41px;
+  background-image: image_url("trash.png");
+  background-size: cover;
+  top: 0px;
+  right: 7px;
+}
+
+.delete-note:hover {
+  background-image: image_url('trash-hover.png');
+}
