@@ -21,4 +21,3 @@ note2 = Note.create!(
   title: 'Class Notes',
   body: 'Learn javascript, learn ruby, learn html, learn css, learn...sql?',
   author_id: guest.id)
-  )
