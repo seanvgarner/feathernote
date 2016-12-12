@@ -10,6 +10,7 @@ class App extends React.Component {
   }
 
   componentWillMount() {
+    this.props.getNotebooks();
     this.props.getAllNotes();
   }
 
@@ -26,7 +27,7 @@ class App extends React.Component {
         <div className="main group">
           <SidebarContainer router={this.props.router}/>
           <NoteIndexContainer />
-          <NoteDetailContainer onUpdate={ this.onUpdate }/>
+          <NoteDetailContainer onUpdate={ this.onUpdate } notebooks={ this.props.notebooks }/>
           { children }
         </div>
       );

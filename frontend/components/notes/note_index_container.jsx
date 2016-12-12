@@ -9,7 +9,8 @@ const mapStateToProps = (state, ownProps) => {
     noteDetail: state.noteDetail,
     currentUser: state.session.currentUser,
     notes: sortedNotes(state.notes),
-    currentNote: state.notes.currentNote
+    currentNote: state.notes.currentNote,
+    currentNotebook: state.notebooks.currentNotebook
   };
 };
 

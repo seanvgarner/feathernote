@@ -15,8 +15,9 @@ const NotesReducer = (state = _nullNotes, action ) => {
       return merge({}, state, { notes });
     case RECEIVE_NOTE:
       const newNote = action.note;
-      let note = { [newNote.id]: newNote };
-      return merge({}, state, { notes: note });
+      newState = merge({}, state);
+      newState.notes[newNote.id] = newNote;
+      return newState;
     case SWITCH_NOTE:
       newState = merge({}, state);
       newState.currentNote = action.note;
@@ -31,3 +32,6 @@ const NotesReducer = (state = _nullNotes, action ) => {
 };
 
 export default NotesReducer;
+
+// let note = { [newNote.id]: newNote };
+// return merge({}, state, { notes: note });

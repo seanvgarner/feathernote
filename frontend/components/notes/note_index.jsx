@@ -6,9 +6,22 @@ class NoteIndex extends React.Component {
     super(props);
   }
 
+  componentWillReceiveProps(nextProps){
+    if ( !this.props.currentNote && nextProps.notes.length > 0){
+      this.props.switchNote(nextProps.notes[0]);
+    }
+  }
+
 
   render() {
-    const { notes } = this.props;
+    let notes = this.props.notes;
+    let title = "Notes";
+
+    if (this.props.currentNotebook) {
+      notes = notes.filter(note => this.props.currentNotebook.id === note.notebook_id);
+      title = this.props.currentNotebook.title;
+    }
+
     const noteItems = notes.map((note) => {
       return (<NoteIndexItemContainer key={`note-${note.id}`} note={ note } />);
       }
@@ -17,7 +30,7 @@ class NoteIndex extends React.Component {
     return (
       <div className="note-index group">
         <header className="index-header">
-          <h4>Notes</h4>
+          <h4>{title}</h4>
           <div className="sub-header">
             <div className="note-count">{ noteCount }</div>
           </div>
