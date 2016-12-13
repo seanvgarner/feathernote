@@ -12,18 +12,18 @@ const NotesReducer = (state = _nullNotes, action ) => {
   switch(action.type) {
     case RECEIVE_ALL_NOTES:
       let notes = action.notes;
-      return merge({}, state, { notes });
+      return Object.assign({}, state, { notes });
     case RECEIVE_NOTE:
       const newNote = action.note;
-      newState = merge({}, state);
+      newState = Object.assign({}, state);
       newState.notes[newNote.id] = newNote;
       return newState;
     case SWITCH_NOTE:
-      newState = merge({}, state);
+      newState = Object.assign({}, state);
       newState.currentNote = action.note;
       return newState;
     case REMOVE_NOTE:
-      newState = merge({}, state);
+      newState = Object.assign({}, state);
       delete newState.notes[action.note.id];
       return newState;
     default:

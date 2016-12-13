@@ -36,30 +36,36 @@ class NotebooksIndexItem extends React.Component {
     if (this.props.notebooks.length <= 1) {
       canRemove += "-disabled";
     }
+    let itemClassName = "notebook-item";
+    if (this.props.currentNotebook && this.props.notebook.id === this.props.currentNotebook.id) {
+      itemClassName += " current-book";
+    }
 
     const { title } = this.props.notebook;
     const thisNotebooksNotes = this.props.notes.filter(note => note.notebook_id === this.props.notebook.id );
     const noteCount = thisNotebooksNotes.length;
 
     return (
-      <li onClick={ this.handleSelectNotebook }>
-        <div className="notebook-title">
-          { title }
+      <li onClick={ this.handleSelectNotebook } className={ itemClassName}>
+        <div className="notebook-item-container group">
+          <div className="notebook-title">
+            { title }
+          </div>
+          <div className={ canRemove } onClick={ this.toggleDeleteModal }>
+          </div>
+          <div className="notebook-note-count">
+            { noteCount } Notes
+          </div>
+
+          <Modal
+            style={ FullscreenStyle }
+            isOpen={ this.state.deleteModalOpen }
+            onRequestClose={ this.closeDeleteModal}
+            contentLabel="Modal">
+            <DeleteNotebookContainer
+              closeDeleteModal={ this.closeDeleteModal } notebook={ this.props.notebook }/>
+          </Modal>
         </div>
-        <div className="notebook-note-count">
-          { noteCount } Notes
-        </div>
-        <div className={ canRemove } onClick={ this.toggleDeleteModal }>
-          Delete
-        </div>
-        <Modal
-          style={ FullscreenStyle }
-          isOpen={ this.state.deleteModalOpen }
-          onRequestClose={ this.closeDeleteModal}
-          contentLabel="Modal">
-          <DeleteNotebookContainer
-            closeDeleteModal={ this.closeDeleteModal } notebook={ this.props.notebook }/>
-        </Modal>
       </li>
     );
   }

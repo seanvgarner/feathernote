@@ -17,6 +17,7 @@ class User < ActiveRecord::Base
   validates :email, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
   after_initialize :ensure_session_token
+  after_create :ensure_default_starting_notebook
 
   has_many :notes,
     primary_key: :id,
@@ -55,6 +56,10 @@ class User < ActiveRecord::Base
   private
   def ensure_session_token
     self.session_token ||= User.generate_session_token
+  end
+
+  def ensure_default_starting_notebook
+    Notebook.create!( title: "Welcome to Feathernote!", author_id: self.id)
   end
 
 end

@@ -21,3 +21,45 @@
   width: 400px;
   border: 1px solid grey;
 }
+
+.save-button {
+  display: block;
+  box-sizing: border-box;
+  float: left;
+  height: 33px;
+  width: 60px;
+  background-color: #2dbe60;
+  border: 1px solid #2dbe60;
+  color: #fff;
+  margin: 0 4px;
+  padding: 9px 9px;
+  border-radius: 5px;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 13px;
+}
+
+.save-button:hover {
+  background-color: #28a955;
+  border: 1px solid #28a955;
+  cursor: pointer;
+}
+
+.save-button-disabled {
+  display: block;
+  box-sizing: border-box;
+  float: left;
+  height: 33px;
+  width: 60px;
+  background-color: #2dbe60;
+  border: 1px solid #2dbe60;
+  color: #fff;
+  margin: 0 4px;
+  padding: 9px 9px;
+  border-radius: 5px;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 13px;
+  cursor: default;
+  opacity: 0.5;
+}

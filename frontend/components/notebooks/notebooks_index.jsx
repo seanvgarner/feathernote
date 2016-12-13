@@ -27,22 +27,23 @@ class NotebooksIndex extends React.Component {
   render() {
     return(
       <div className="notebooks-index">
-        <header>
+        <header className="notebooks-index-header">
           <div className="notebook-index-title">
             NoteBooks
           </div>
           <div className="add-notebook-modal-btn" onClick={ this.toggleAddNotebookModal }>
-            add Notebook
           </div>
         </header>
-        <ul className="notebook-item-ul">
-          {this.props.notebooks.map((notebook, idx) => (
-            <NotebookIndexItemContainer
-            key={`notebook-${idx}`}
-            notebook={ notebook }
-            closeInitialModal={ this.props.closeInitialModal } />
-          ))}
-        </ul>
+        <div className="notebook-item-list">
+          <ul className="notebook-item-ul">
+            {this.props.notebooks.map((notebook, idx) => (
+              <NotebookIndexItemContainer
+              key={`notebook-${idx}`}
+              notebook={ notebook }
+              closeInitialModal={ this.props.closeInitialModal } />
+            ))}
+          </ul>
+        </div>
         <Modal
           style={ FullscreenStyle }
           isOpen={this.state.addNotebookModalOpen}

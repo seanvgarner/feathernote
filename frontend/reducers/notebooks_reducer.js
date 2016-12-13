@@ -11,14 +11,14 @@ const NotebooksReducer = (state = _nullNotebooks, action ) => {
   switch(action.type) {
     case RECEIVE_NOTEBOOKS:
       const notebooks = action.notebooks;
-      return merge({}, _nullNotebooks, { notebooks });
+      return Object.assign({}, _nullNotebooks, { notebooks });
     case RECEIVE_NOTEBOOK:
-      newState = merge({}, state);
+      newState = Object.assign({}, state);
       const newNotebook = action.notebook;
       newState.notebooks.unshift(newNotebook);
       return newState;
     case SWITCH_NOTEBOOK:
-      newState = merge({}, state);
+      newState = Object.assign({}, state);
       newState.currentNotebook = action.notebook;
       return newState;
     case REMOVE_NOTEBOOK:

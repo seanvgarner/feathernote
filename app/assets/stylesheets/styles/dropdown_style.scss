@@ -1,0 +1,108 @@
+.Dropdown-root {
+  position: relative;
+  padding-right: 0px;
+}
+
+.Dropdown-control {
+  position: relative;
+  overflow: hidden;
+  background-color: white;
+  box-sizing: border-box;
+  color: #606060;
+  cursor: default;
+  outline: none;
+  padding: 8px 35px 8px 10px;
+  width: 170px;
+}
+
+.Dropdown-placeholder {
+  overflow: hidden;
+  overflow-wrap: break-word;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: break-word;
+  font-family: 'Lato', serif;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+
+.Dropdown-control:hover {
+  cursor: pointer;
+}
+
+.Dropdown-arrow {
+  border-color: #999 transparent transparent;
+  border-style: solid;
+  border-width: 5px 5px 0;
+  content: ' ';
+  display: block;
+  height: 0;
+  margin-top: -ceil(2.5);
+  position: absolute;
+  right: 10px;
+  top: 14px;
+  width: 0
+}
+
+.Dropdown-menu {
+  width: 364px;
+  background-color: white;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04), -6px 8px 15px rgba(0, 0, 0, 0.04), 6px 8px 15px rgba(0, 0, 0, 0.04);
+  border: 3px solid rgba(217, 217, 217, 0.4);
+  border-top: 1px solid rgba(217, 217, 217, 0.4);
+  box-sizing: border-box;
+  margin-top: -1px;
+  max-height: 281px;
+  overflow-y: auto;
+  position: absolute;
+  top: 100%;
+  z-index: 10;
+  -webkit-overflow-scrolling: touch;
+}
+
+.Dropdown-menu .Dropdown-group > .Dropdown-title{
+  padding: 8px 10px;
+  color: rgba(51, 51, 51, 1);
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.Dropdown-option {
+  box-sizing: border-box;
+  color: #606060;
+  cursor: pointer;
+  font-family: 'Lato', serif;
+  font-weight: 300;
+  display: block;
+  padding: 15px 30px;
+  border-bottom: 1px solid #ececec;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: break-word;
+}
+
+.Dropdown-option:last-child {
+  border-bottom-right-radius: 2px;
+   border-bottom-left-radius: 2px;
+}
+
+.Dropdown-option:hover {
+  background-color: #37b058;
+  opacity: 0.9;
+  color: #fff;
+}
+
+.Dropdown-option.is-selected {
+  color: #37b058;
+}
+
+.Dropdown-noresults {
+  box-sizing: border-box;
+  color: #ccc;
+  cursor: default;
+  display: block;
+  padding: 8px 10px;
+}

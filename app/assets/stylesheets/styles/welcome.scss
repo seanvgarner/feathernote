@@ -1,3 +1,9 @@
+.content-container {
+  display: block;
+  overflow-y: auto;
+  height: 100vh;
+}
+
 .welcome-header {
   position: relative;
   display: block;

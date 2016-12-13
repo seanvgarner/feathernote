@@ -16,6 +16,12 @@ class SessionForm extends React.Component {
     return e => this.setState({ [field]: e.currentTarget.value });
   }
 
+  componentWillReceiveProps(nextProps) {
+     if ( this.props.location.pathname !== nextProps.location.pathname ) {
+       this.props.clearError();
+     }
+  }
+
   redirect() {
     if (this.props.loggedIn) {
       this.props.router.push("/home");
@@ -67,33 +73,35 @@ class SessionForm extends React.Component {
     const formTitle = (formType === "signin") ? "Sign in" : "Sign up";
 
     return (
-      <div className="signin-form-container group">
-        <div className="logo-header">
-          <div className="logo-wrap">
-            <img src={ window.featherLogo }></img>
+      <div className="session-wrapper">
+        <div className="signin-form-container group">
+          <div className="logo-header">
+            <div className="logo-wrap">
+              <img src={ window.featherLogo }></img>
+            </div>
+            <h2>{ formTitle }</h2>
           </div>
-          <h2>{ formTitle }</h2>
+          <form className="signin-box" onSubmit={ this.handleSubmit }>
+            <div className="input-container group">
+              <div className="signin-form group">
+                  <input type="text"
+                      value={ this.state.email }
+                      onChange={ this.update("email")}
+                      className="signin-input"
+                      placeholder="Email"/>
+                    <br/>
+                  <input type="password"
+                      value={ this.state.password }
+                      onChange={ this.update("password")}
+                      className="signin-input"
+                      placeholder="Password"/>
+                    { this.renderErrors() }
+              </div>
+                <input type="submit" className="signin-submit-btn" value={ formTitle }/>
+              </div>
+          </form>
+          { this.navLink() }
         </div>
-        <form className="signin-box" onSubmit={ this.handleSubmit }>
-          <div className="input-container group">
-            <div className="signin-form group">
-                <input type="text"
-                    value={ this.state.email }
-                    onChange={ this.update("email")}
-                    className="signin-input"
-                    placeholder="Email"/>
-                  <br/>
-                <input type="password"
-                    value={ this.state.password }
-                    onChange={ this.update("password")}
-                    className="signin-input"
-                    placeholder="Password"/>
-                  { this.renderErrors() }
-            </div>
-              <input type="submit" className="signin-submit-btn" value={ formTitle }/>
-            </div>
-        </form>
-        { this.navLink() }
       </div>
     );
   }

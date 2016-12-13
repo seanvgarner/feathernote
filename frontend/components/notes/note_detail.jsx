@@ -1,4 +1,5 @@
 import React from 'react';
+import SelectNotebookContainer from '../notebooks/select_notebook_container';
 
 class NoteDetail extends React.Component {
   constructor(props) {
@@ -22,49 +23,37 @@ class NoteDetail extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    if (this.props.currentNote) {
-      const prevTitle = this.props.currentNote.title;
-      const prevBody = this.props.currentNote.body;
-      const newTitle = this.state.title;
-      const newBody = this.state.body;
-      if ( prevTitle !== newTitle || prevBody !== newBody ) {
-        this.props.updateNote(this.state);
+    if (this.state.title) {
+      if (this.props.currentNote) {
+        const prevTitle = this.props.currentNote.title;
+        const prevBody = this.props.currentNote.body;
+        const newTitle = this.state.title;
+        const newBody = this.state.body;
+        if ( prevTitle !== newTitle || prevBody !== newBody ) {
+          if (this.state.title) {
+            this.props.updateNote(this.state);
+          } else {
+            //Not using this logic currently but might use if I have to change things for auto save.
+            let untitledNote = Object.assign({}, this.props.currentNote, this.state, {title: "Title your note"});
+            this.props.updateNote(untitledNote);
+          }
+        }
       }
-    // } else {
-    //   let note;
-    //   if (this.state.title) {
-    //     note = Object.assign({}, this.state);
-    //     this.props.saveNewNote(note).then(response => this.props.switchNote(response.note));
-    //   } else {
-    //
-    //     note = Object.assign({}, this.state, { title: "Title your note"});
-    //     this.props.saveNewNote(note).then(response => this.props.switchNote(response.note));
-    //   }
     }
     this.props.onUpdate(this.state.title);
   }
-  //   let note = this.props.noteDetail;
-  //
-  //   if (note.id) {
-  //     note = Object.assign({}, this.state, { id: note.id });
-  //     this.props.updateNote(note);
-  //   } else {
-  //     if (this.state.title) {
-  //       note = Object.assign({}, this.state);
-  //       this.props.saveNewNote(note);
-  //     } else {
-  //
-  //       note = Object.assign({}, this.state, { title: "Untitled Note"});
-  //       this.props.saveNewNote(note);
-  //     }
-  //   }
-  // }
+
 
   update(field) {
     return e => this.setState({[field]: e.currentTarget.value });
   }
 
   render() {
+    let saveButton = "save-button";
+    if (!this.state.title) {
+      saveButton += "-disabled";
+    }
+
     if (this.props.notes.length === 0 ) {
       return (
         <div className="note-detail-empty">
@@ -75,9 +64,10 @@ class NoteDetail extends React.Component {
       return (
         <div className="note-detail group">
           <div className="detail-wrapper">
-            <h4>Detail View</h4>
+            <SelectNotebookContainer />
             <form onSubmit={ this.handleSubmit }>
-              <input type="submit" value="Save"/>
+              <input type="submit" value="Save" className={ saveButton }/>
+              <br/>
               <h4>***Toolbar Coming Soon***</h4>
               <input type="text"
                 value={this.state.title}

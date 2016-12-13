@@ -11,7 +11,7 @@ const NoteDetailReducer = (state = _defaultNote, action ) => {
   switch(action.type) {
     case RECEIVE_NOTE:
     case RECEIVE_NEW_NOTE:
-      return merge({}, action.note);
+      return Object.assign({}, action.note);
     default:
       return state;
   }

@@ -5,3 +5,121 @@
   width: 100%;
   border-right: 3px solid rgba(236, 236, 236, 0.7);
 }
+
+.notebooks-index-header {
+  display: block;
+  height: 100px;
+  border-bottom: 1px solid #ececec;
+  padding: 0 20px 0 24px;
+}
+
+.notebook-index-title {
+  margin-top: 23px;
+  font-weight: 300;
+  color: #878787;
+  text-transform: uppercase;
+  font-family: "Lato", sans-serif;
+  font-size: 24px;
+  line-height: 26px;
+  letter-spacing: 0.5px;
+  float: left;
+  width: 80%;
+}
+
+.add-notebook-modal-btn {
+  margin-top: 15px;
+  display: block;
+  width: 42px;
+  height: 42px;
+  float: right;
+  background-image: image_url("add-new-notebook.png");
+  background-size: cover;
+}
+
+.add-notebook-modal-btn:hover {
+  cursor: pointer;
+}
+
+.notebook-item-ul {
+  display: block;
+  height: 85vh;
+  overflow-y: auto;
+}
+
+.notebook-item {
+  position: relative;
+  width: 100%;
+  height: 70px;
+  box-sizing: border-box;
+  padding: 10px 20px 1px 20px;
+  background-color: #fff;
+  transition: background 0.25s ease-in-out;
+  -webkit-transition: background 0.25s ease-in-out;
+  -moz-transition: background 0.25s ease-in-out;
+}
+
+.current-book {
+  background-color: #ececec;
+}
+
+.notebook-item:hover {
+  background-color: #37b058;
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.notebook-title {
+  font-family: 'Noto Serif', serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #4a4a4a;
+  max-height: 40px;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: break-word;
+  line-height: 20px;
+  width: 270px;
+}
+
+
+.notebook-item:hover .notebook-title {
+  color: #fff;
+}
+
+.delete-notebook-trash-can {
+  position: absolute;
+  width: 41px;
+  height: 41px;
+  background-image: image_url("trash.png");
+  opacity: 0.0;
+  background-size: cover;
+  top: 0px;
+  right: 7px;
+}
+
+.notebook-item:hover .delete-notebook-trash-can {
+  opacity: 1.0;
+}
+
+.delete-notebook-trash-can:hover {
+  background-image: image_url('trash-hover.png');
+}
+
+.notebook-note-count {
+  color: #878787;
+  font-family: 'Lato',helvetica,arial,sans-serif;
+  font-size: 12px;
+  overflow-x: wrap;
+  overflow-y: hidden;
+  letter-spacing: 1px;
+  margin-top: 5px;
+}
+.notebook-item-container {
+  width: 100%;
+  display: block;
+  height: 100%;
+  border-bottom: 1px solid #ececec;
+  float: left;
+}

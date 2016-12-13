@@ -16,10 +16,11 @@ class NoteIndex extends React.Component {
   render() {
     let notes = this.props.notes;
     let title = "Notes";
-
+    let headerClass = "index-header";
     if (this.props.currentNotebook) {
       notes = notes.filter(note => this.props.currentNotebook.id === note.notebook_id);
       title = this.props.currentNotebook.title;
+      headerClass += "-notebook-style";
     }
 
     const noteItems = notes.map((note) => {
@@ -29,8 +30,10 @@ class NoteIndex extends React.Component {
     const noteCount = `${noteItems.length} notes`;
     return (
       <div className="note-index group">
-        <header className="index-header">
-          <h4>{title}</h4>
+        <header className={ headerClass }>
+          <div className="index-title-wrapper">
+            <h4>{title}</h4>
+          </div>
           <div className="sub-header">
             <div className="note-count">{ noteCount }</div>
           </div>

@@ -50,6 +50,7 @@ class Sidebar extends React.Component {
 
   toggleAllNotes() {
     this.props.switchNotebook(null);
+    this.closeInitialModal();
   }
 
 

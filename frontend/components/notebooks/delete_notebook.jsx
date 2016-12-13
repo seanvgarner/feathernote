@@ -38,14 +38,25 @@ class DeleteNotebook extends React.Component {
   }
 
   render() {
+    const { title } = this.props.notebook;
+
     return (
-      <div>
-        DeleteModal
-        <div className="cancel-delete-notebook-btn" onClick={ this.handleCancel }>
-          Cancel
-        </div>
-        <div className="delete-notebook-btn" onClick={ this.handleNotebookDelete }>
-          Delete Notebook
+      <div className="delete-modal-wrapper group">
+        <div className="delete-modal-dialogue group">
+          <header className="delete-notebook-header">
+            <div className="trash-can-for-modal"></div>
+            <div className="modal-title">Delete Notebook</div>
+            <div className="bottom-box"></div>
+          </header>
+          <div className="delete-notebook-prompt">Are you sure you want to delete <span>{ title }?</span></div>
+          <div className="buttons-wrap group">
+            <div className="cancel-delete-notebook-btn" onClick={ this.handleCancel }>
+              Cancel
+            </div>
+            <div className="delete-notebook-btn" onClick={ this.handleNotebookDelete }>
+              Delete
+            </div>
+          </div>
         </div>
       </div>
     );

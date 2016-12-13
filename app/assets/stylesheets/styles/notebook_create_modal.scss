@@ -1,0 +1,144 @@
+.add-modal-wrapper {
+  display: block;
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+}
+
+.add-modal-dialogue {
+  width: 100%;
+  display: block;
+  padding: 100px 0;
+  width: 650px;
+  margin: 0 auto;
+}
+
+.add-notebook-header {
+  height: 120px;
+}
+
+.notebook-icon-for-modal {
+  display: block;
+  height: 69px;
+  width: 69px;
+  background-image: image_url("notebook-for-modal.png");
+  background-size: cover;
+  margin: 0 auto;
+}
+
+.add-nb-title {
+  text-transform: uppercase;
+  letter-spacing: 2.2px;
+  color: #878787;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  margin-top: 8px;
+}
+
+.separator-box {
+  display: block;
+  height: 20px;
+  width: 100px;
+  border-bottom: 1px solid #d1d1d1;
+  margin: 0 auto;
+
+}
+.input-title-wrapper {
+  margin: 40px 0 75px 0;
+  display: block;
+}
+
+.title-input-field {
+  display: block;
+  width: 300px;
+  margin: 0 auto;
+  color: #383838;
+  font-size: 36px;
+  font-weight: 300;
+  line-height: 44px;
+  font-family: "Lato", serif;
+}
+
+.typing-input {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  color: #383838;
+  font-size: 36px;
+  font-weight: 300;
+  line-height: 44px;
+  font-family: "Lato", serif;
+}
+
+.buttons-wrapper {
+  width: 396px;
+  display: block;
+  margin: 0 auto;
+}
+
+.cancel-create-notebook-btn {
+  display: block;
+  box-sizing: border-box;
+  float: left;
+  height: 33px;
+  width: 190px;
+  background-color: #ececec;
+  border: 1px solid #d9d9d9;
+  color: #606060;
+  margin: 0 4px;
+  padding: 9px 71px;
+  border-radius: 5px;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 13px;
+}
+
+.cancel-create-notebook-btn:hover {
+  background-color: #d9d9d9;
+  border: 1px solid #d1d1d1;
+  cursor: pointer;
+}
+
+.create-notebook-btn {
+  display: block;
+  box-sizing: border-box;
+  float: left;
+  height: 33px;
+  width: 190px;
+  background-color: #2dbe60;
+  border: 1px solid #2dbe60;
+  color: #fff;
+  margin: 0 4px;
+  padding: 9px 44px;
+  border-radius: 5px;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 13px;
+}
+
+.create-notebook-btn:hover {
+  background-color: #28a955;
+  border: 1px solid #28a955;
+  cursor: pointer;
+}
+
+.create-notebook-btn-disabled {
+  display: block;
+  box-sizing: border-box;
+  float: left;
+  height: 33px;
+  width: 190px;
+  background-color: #2dbe60;
+  border: 1px solid #2dbe60;
+  color: #fff;
+  margin: 0 4px;
+  padding: 9px 44px;
+  border-radius: 5px;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 13px;
+  cursor: default;
+  opacity: 0.5;
+}

@@ -30,21 +30,35 @@ class AddNotebook extends React.Component {
   }
 
   render() {
+    let inputClass = "typing-input";
     let createClass = "create-notebook-btn";
     if (this.state.title.length === 0) {
-      createClass += " disabled";
+      createClass += "-disabled";
+      inputClass = "title-input-field";
     }
     return(
-      <div>
-        <input type="text"
-          value={this.state.title}
-          onChange={ this.update("title")}
-          placeholder="Title your notebook"/>
-        <div className="cancel-create-notebook-btn" onClick={ this.handleCancel }>
-          Cancel
-        </div>
-        <div className={ createClass } onClick={ this.handleCreateNotebook }>
-          Create Notebook
+      <div className="add-modal-wrapper group">
+        <div className="add-modal-dialogue group">
+          <header className="add-notebook-header">
+            <div className="notebook-icon-for-modal"></div>
+            <div className="add-nb-title">Create Notebook</div>
+            <div className="separator-box"></div>
+          </header>
+          <div className="input-title-wrapper">
+            <input type="text"
+              value={this.state.title}
+              onChange={ this.update("title")}
+              className={ inputClass }
+              placeholder="Title your notebook"/>
+            </div>
+          <div className="buttons-wrapper group">
+            <div className="cancel-create-notebook-btn" onClick={ this.handleCancel }>
+              Cancel
+            </div>
+            <div className={ createClass } onClick={ this.handleCreateNotebook }>
+              Create Notebook
+            </div>
+          </div>
         </div>
       </div>
     );

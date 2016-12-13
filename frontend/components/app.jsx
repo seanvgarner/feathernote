@@ -6,12 +6,13 @@ import NoteDetailContainer from './notes/note_detail_container';
 class App extends React.Component {
   constructor(props) {
     super(props);
+    this.props.getNotebooks();
+    this.props.getAllNotes();
     this.onUpdate = this.onUpdate.bind(this);
   }
 
   componentWillMount() {
-    this.props.getNotebooks();
-    this.props.getAllNotes();
+
   }
 
   onUpdate(noteChange) {

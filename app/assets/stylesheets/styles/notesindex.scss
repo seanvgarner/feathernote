@@ -14,12 +14,46 @@
   padding: 24px 20px 0 24px;
 }
 
+.index-title-wrapper {
+  margin: 0;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  height: 26px;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: break-word;
+  line-height: 26px;
+}
+
 .index-header h4 {
   font-weight: 300;
   color: #878787;
   text-transform: uppercase;
   font-family: "Lato", sans-serif;
   font-size: 24px;
+  line-height: 26px;
+  letter-spacing: 0.5px;
+}
+
+.index-header-notebook-style {
+  display: block;
+  height: 95px;
+  background-color: #393d41;
+  border-bottom: 4px solid #ececec;
+  padding: 24px 20px 0 24px;
+}
+
+.index-header-notebook-style h4 {
+  font-weight: 300;
+  color: #fff;
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  font-size: 24px;
+  overflow: hidden;
+  text-overflow: ellipsis;
   line-height: 26px;
   letter-spacing: 0.5px;
 }
