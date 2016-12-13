@@ -14,9 +14,9 @@ Note.destroy_all
 guest = User.create!(email: 'guest', password: 'password')
 sean = User.create!(email: 'seangarner@gmail.com', password: '1234abcd')
 
-notebook1 = Notebook.create!(title: "TODOS")
-notebook2 = Notebook.create!(title: "Class Related")
-notebook3 = Notebook.create!(title: "Memories")
+notebook1 = Notebook.create!(title: "TODOS", author_id: guest.id)
+notebook2 = Notebook.create!(title: "Class Related", author_id: guest.id)
+notebook3 = Notebook.create!(title: "Memories", author_id: guest.id)
 
 note1 = Note.create!(
   title: 'My First Note',
