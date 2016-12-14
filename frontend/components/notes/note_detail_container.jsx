@@ -20,7 +20,7 @@ const mapDispatchToProps = (dispatch) => {
     switchNote: (note) => dispatch(switchNote(note)),
     getOneNote: (id) => dispatch(getOneNote(id)),
     saveNewNote: (note) => dispatch(saveNewNote(note)),
-    updateNote: (note) => dispatch(updateNote(note))
+    updateNote: (note) => dispatch(updateNote(note)),
   };
 };
 

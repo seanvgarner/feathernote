@@ -29,7 +29,7 @@ class Sidebar extends React.Component {
     if (this.props.currentNotebook) {
       newNotebook = this.props.currentNotebook.id;
     }
-    const dummyNote = { title: "Title your note", body: "", notebook_id: newNotebook};
+    const dummyNote = { title: "Title your note", body: "<p><br><p>", notebook_id: newNotebook};
     this.props.saveNewNote(dummyNote).then((response) => {
       this.props.switchNote(response.note);
     });

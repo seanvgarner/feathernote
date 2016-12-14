@@ -29,6 +29,11 @@ class User < ActiveRecord::Base
     class_name: 'Notebook',
     foreign_key: :author_id
 
+  has_many :tags,
+    primary_key: :id,
+    class_name: 'Tag',
+    foreign_key: :author_id
+
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
     user && user.valid_password?(password) ? user : nil

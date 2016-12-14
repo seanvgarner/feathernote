@@ -42,7 +42,7 @@
 
 .notebook-item-ul {
   display: block;
-  height: 85vh;
+  height: calc(100vh - 101px);
   overflow-y: auto;
 }
 

@@ -53,7 +53,6 @@ class SelectNotebook extends React.Component {
     const defaultOption = this.getDefaultOption();
     return (
       <div className="dropdown-notebook-menu">
-        Notebook select
         <Dropdown options={ options } onChange={ this.handleSelect } value={ defaultOption}/>
       </div>
     );

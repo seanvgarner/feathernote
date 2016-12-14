@@ -25,11 +25,14 @@ class App extends React.Component {
     const { children, currentUser, logout } = this.props;
     if (currentUser) {
       return (
+        <div className="main-content-wrapper group">
         <div className="main group">
+
           <SidebarContainer router={this.props.router}/>
           <NoteIndexContainer />
           <NoteDetailContainer onUpdate={ this.onUpdate } notebooks={ this.props.notebooks }/>
           { children }
+        </div>
         </div>
       );
     } else {

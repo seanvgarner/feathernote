@@ -13,11 +13,20 @@ class NoteIndexItem extends React.Component {
   handleDelete(e) {
     e.stopPropagation();
     this.props.destroyNote(this.props.note);
+    this.props.switchNote(null);
   }
 
   switchToNote(e) {
     this.props.switchNote(this.props.note);
     // this.props.getOneNote(this.props.note.id);
+  }
+
+  getTextFromBody() {
+    let fakeElement = document.createElement("div");
+    fakeElement.innerHTML = this.props.note.body;
+
+    const textOnly = fakeElement.textContent;
+    return textOnly;
   }
 
   render() {
@@ -44,7 +53,7 @@ class NoteIndexItem extends React.Component {
             { timeAgo }
           </div>
           <div className="index-body">
-            { body }
+            { this.getTextFromBody() }
           </div>
         </div>
       </li>

@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactQuill from 'react-quill';
 import SelectNotebookContainer from '../notebooks/select_notebook_container';
 
 class NoteDetail extends React.Component {
@@ -10,6 +11,7 @@ class NoteDetail extends React.Component {
       id: 0
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.updateBody = this.updateBody.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -24,6 +26,7 @@ class NoteDetail extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     if (this.state.title) {
+      debugger
       if (this.props.currentNote) {
         const prevTitle = this.props.currentNote.title;
         const prevBody = this.props.currentNote.body;
@@ -40,12 +43,16 @@ class NoteDetail extends React.Component {
         }
       }
     }
-    this.props.onUpdate(this.state.title);
+    // this.props.onUpdate(this.state.title);
   }
 
 
   update(field) {
     return e => this.setState({[field]: e.currentTarget.value });
+  }
+
+  updateBody(text) {
+    this.setState({ body: text });
   }
 
   render() {
@@ -64,28 +71,28 @@ class NoteDetail extends React.Component {
       return (
         <div className="note-detail group">
           <div className="detail-wrapper">
+            <header className="detail-header group">
+            <div onClick={ this.handleSubmit } className={ saveButton }>Save</div>
             <SelectNotebookContainer />
-            <form onSubmit={ this.handleSubmit }>
-              <input type="submit" value="Save" className={ saveButton }/>
-              <br/>
-              <h4>***Toolbar Coming Soon***</h4>
+            <div className="tags-place-holder"></div>
+            </header>
               <input type="text"
                 value={this.state.title}
                 onChange={ this.update("title")}
-                className="note-title-input"
+                className="note-detail-title-input"
                 placeholder="Title your note"/>
-              <br/>
-              <textarea
-                value={this.state.body}
-                onChange={ this.update("body")}
-                className="note-input-body"
-                placeholder="Just start typing..."></textarea>
-            </form>
+              <div className="note-editor-container">
+                <ReactQuill
+                  theme="snow"
+                  value={this.state.body}
+                  onChange={ this.updateBody }/>
+              </div>
           </div>
         </div>
       );
     }
   }
 }
+
 
 export default NoteDetail;

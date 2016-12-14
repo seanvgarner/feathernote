@@ -1,38 +1,40 @@
 .note-detail {
+  height: calc(100vh - 40px);
+  position: relative;
   display: block;
-  height: 100vh;
   margin-left: 423px;
   padding: 40px 30px 0 40px;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 .detail-wrapper {
-  width: 100%;
-}
-
-
-.note-input-body {
-  height: 500px;
-  width: 300px;
-  border: 1px solid grey;
-}
-
-.note-title-input {
   display: block;
-  width: 400px;
-  border: 1px solid grey;
+  float: left;
+  height: 100vh;
+}
+
+.detail-header {
+  width: 800px;
+  display: block;
+  padding-top: 15px;
+  padding-left: 13px;
+  box-sizing: border-box;
+  height: 50px;
 }
 
 .save-button {
+  text-align: center;
   display: block;
-  box-sizing: border-box;
   float: left;
+  box-sizing: border-box;
   height: 33px;
   width: 60px;
   background-color: #2dbe60;
   border: 1px solid #2dbe60;
   color: #fff;
   margin: 0 4px;
-  padding: 9px 9px;
+  padding: 9px;
   border-radius: 5px;
   font-weight: 300;
   font-size: 13px;
@@ -46,20 +48,44 @@
 }
 
 .save-button-disabled {
+  text-align: center;
   display: block;
-  box-sizing: border-box;
   float: left;
+  box-sizing: border-box;
   height: 33px;
   width: 60px;
   background-color: #2dbe60;
   border: 1px solid #2dbe60;
   color: #fff;
   margin: 0 4px;
-  padding: 9px 9px;
+  padding: 9px;
   border-radius: 5px;
   font-weight: 300;
   font-size: 13px;
   line-height: 13px;
   cursor: default;
   opacity: 0.5;
+}
+.dropdown-notebook-menu {
+  float: left;
+}
+
+.tags-place-holder {
+  display: block;
+  height: 33px;
+  width: 200px;
+  float: left;
+}
+
+.note-detail-title-input {
+  width: 769px;
+  background-color: #fff;
+  position: absolute;
+  top: 131px;
+  left: 55px;
+  font-size: 32px;
+  font-family: "Roboto Slab", serif;
+  font-weight: 100;
+  color: #2dbe60;
+  z-index: 1;
 }

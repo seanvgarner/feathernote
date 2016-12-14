@@ -71,9 +71,9 @@
   font-size: 16px;
 }
 
-.index-list ul {
+.index-list {
   display: block;
-  height: 81vh;
+  height: calc(100vh - 123px);
   overflow-y: auto;
 }
 

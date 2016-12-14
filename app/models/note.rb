@@ -19,4 +19,15 @@ class Note < ActiveRecord::Base
     class_name: 'User',
     foreign_key: :author_id
   belongs_to :notebook
+
+  has_many :taggings,
+    primary_key: :id,
+    class_name: 'Tagging',
+    foreign_key: :note_id,
+    dependent: :destroy
+
+
+  has_many :tags,
+    through: :taggings,
+    source: :tag
 end
