@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactQuill from 'react-quill';
 import SelectNotebookContainer from '../notebooks/select_notebook_container';
+import TagsSelectContainer from '../tags/tags_select_container';
 
 class NoteDetail extends React.Component {
   constructor(props) {
@@ -20,13 +21,14 @@ class NoteDetail extends React.Component {
 
         this.setState(nextProps.currentNote);
       }
+    } else {
+      this.setState({title: "", body: "", id: 0 });
     }
   }
 
   handleSubmit(e) {
     e.preventDefault();
     if (this.state.title) {
-      debugger
       if (this.props.currentNote) {
         const prevTitle = this.props.currentNote.title;
         const prevBody = this.props.currentNote.body;
@@ -61,7 +63,12 @@ class NoteDetail extends React.Component {
       saveButton += "-disabled";
     }
 
-    if (this.props.notes.length === 0 ) {
+    let notes = this.props.notes;
+    if (this.props.currentNotebook) {
+      notes = notes.filter(note => this.props.currentNotebook.id === note.notebook_id);
+    }
+
+    if (notes.length === 0 ) {
       return (
         <div className="note-detail-empty">
 
@@ -74,7 +81,7 @@ class NoteDetail extends React.Component {
             <header className="detail-header group">
             <div onClick={ this.handleSubmit } className={ saveButton }>Save</div>
             <SelectNotebookContainer />
-            <div className="tags-place-holder"></div>
+            <TagsSelectContainer />
             </header>
               <input type="text"
                 value={this.state.title}

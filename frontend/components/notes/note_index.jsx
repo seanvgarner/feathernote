@@ -10,6 +10,14 @@ class NoteIndex extends React.Component {
     if ( !this.props.currentNote && nextProps.notes.length > 0){
       this.props.switchNote(nextProps.notes[0]);
     }
+    if (this.props.currentNote && nextProps.currentNote) {
+      if (this.props.currentNote.id !== nextProps.currentNote.id){
+        this.props.getAllNotes();
+      }
+    }
+    if (this.props.notes.length === nextProps.notes.length + 1) {
+      this.props.switchNote(nextProps.notes[0]);
+    }
   }
 
 
@@ -21,6 +29,18 @@ class NoteIndex extends React.Component {
       notes = notes.filter(note => this.props.currentNotebook.id === note.notebook_id);
       title = this.props.currentNotebook.title;
       headerClass += "-notebook-style";
+    } else if (this.props.currentTag) {
+      notes = notes.filter(note => {
+        let usesTag = false;
+        if (note.tags.length > 0) {
+          note.tags.forEach(tag => {
+            if (tag.id === this.props.currentTag.id) {
+              usesTag = true;
+            }
+          });
+        }
+        return usesTag;
+      });
     }
 
     const noteItems = notes.map((note) => {

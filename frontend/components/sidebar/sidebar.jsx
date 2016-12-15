@@ -1,6 +1,7 @@
 import React from 'react';
 import Modal from 'react-modal';
 import NotebookIndexContainer from '../notebooks/notebooks_index_container';
+import TagsIndexContainer from '../tags/tags_index_container';
 import { NotebooksStyle } from '../modal_styles/notebooks_style';
 
 class Sidebar extends React.Component {
@@ -8,20 +9,30 @@ class Sidebar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      notebooksModalOpen: false
+      notebooksModalOpen: false,
+      tagsModalOpen: false
     };
 
     this.logoutCurrentUser = this.logoutCurrentUser.bind(this);
     this.openNewNote = this.openNewNote.bind(this);
     this.toggleNotebooks = this.toggleNotebooks.bind(this);
     this.closeInitialModal = this.closeInitialModal.bind(this);
+    this.closeTagsModal = this.closeTagsModal.bind(this);
     this.toggleAllNotes = this.toggleAllNotes.bind(this);
+    this.toggleTags = this.toggleTags.bind(this);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.notebooks.length !== nextProps.notebooks.length ) {
+      this.props.getAllNotes();
+    }
   }
 
   logoutCurrentUser(e) {
     e.preventDefault();
     this.props.logout().then(() => this.redirect());
   }
+
 
   openNewNote(e) {
     e.preventDefault();
@@ -44,12 +55,21 @@ class Sidebar extends React.Component {
     this.setState({ notebooksModalOpen: !this.state.notebooksModalOpen });
   }
 
+  toggleTags(e) {
+    this.setState({ tagsModalOpen: !this.state.tagsModalOpen });
+  }
+
   closeInitialModal() {
     this.setState({ notebooksModalOpen: false });
   }
 
+  closeTagsModal() {
+    this.setState({ tagsModalOpen: false });
+  }
+
   toggleAllNotes() {
     this.props.switchNotebook(null);
+    this.props.switchTag(null);
     this.closeInitialModal();
   }
 
@@ -70,7 +90,7 @@ class Sidebar extends React.Component {
             </div>
             <div className="all-notes-btn icon" onClick={ this.toggleAllNotes }></div>
             <div className="notebooks-btn icon" onClick={ this.toggleNotebooks }></div>
-            <div className="tags-btn icon"></div>
+            <div className="tags-btn icon" onClick={ this.toggleTags }></div>
             <div className="logout-container">
               <div onClick={ this.logoutCurrentUser } className="logout icon"></div>
             </div>
@@ -81,6 +101,14 @@ class Sidebar extends React.Component {
             onRequestClose={ this.closeInitialModal }
             contentLabel="Modal">
             <NotebookIndexContainer closeInitialModal={ this.closeInitialModal }/>
+          </Modal>
+
+          <Modal
+            style={ NotebooksStyle }
+            isOpen={this.state.tagsModalOpen }
+            onRequestClose={ this.closeTagsModal }
+            contentLabel="Modal">
+            <TagsIndexContainer closeTagsModal={ this.closeTagsModal }/>
           </Modal>
         </div>
       );

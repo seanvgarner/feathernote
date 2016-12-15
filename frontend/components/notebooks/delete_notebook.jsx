@@ -12,6 +12,7 @@ class DeleteNotebook extends React.Component {
   }
 
   handleNotebookDelete(e) {
+    this.props.destroyNotebook(this.props.notebook);
     if (this.props.currentNotebook) {
       this.props.switchNotebook(null);
     }
@@ -20,20 +21,17 @@ class DeleteNotebook extends React.Component {
       this.props.switchNote(null);
     }
 
-    this.props.getAllNotes().then(response => {
-      let notes = response.notes;
-      const notesArr = Object.keys(notes).map(key => notes[key]);
-      if (notesArr.length > 0) {
-        notesArr.forEach((note) => {
-          if (note.notebook_id === this.props.notebook.id) {
-            this.props.destroyNote(note);
-          }
-        });
-      }
-    });
-
-    this.props.destroyNotebook(this.props.notebook);
-    this.props.switchNotebook(null);
+    // this.props.getAllNotes().then(response => {
+    //   let notes = response.notes;
+    //   const notesArr = Object.keys(notes).map(key => notes[key]);
+    //   if (notesArr.length > 0) {
+    //     notesArr.forEach((note) => {
+    //       if (note.notebook_id === this.props.notebook.id) {
+    //         this.props.destroyNote(note);
+    //       }
+    //     });
+    //   }
+    // });
     this.props.closeDeleteModal();
   }
 

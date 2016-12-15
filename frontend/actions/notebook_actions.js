@@ -45,7 +45,7 @@ export function getNotebooks() {
 export function destroyNotebook(notebookToDestroy) {
   return (dispatch) => {
     return APIUtil.destroyNotebook(notebookToDestroy).then(
-      (notebook) => dispatch(removeNotebook(notebook))
+      (notebooks) => dispatch(receiveNotebooks(notebooks))
     );
   };
 }

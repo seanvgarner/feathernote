@@ -8,6 +8,7 @@ class App extends React.Component {
     super(props);
     this.props.getNotebooks();
     this.props.getAllNotes();
+    this.props.getTags();
     this.onUpdate = this.onUpdate.bind(this);
   }
 

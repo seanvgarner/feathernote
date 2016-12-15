@@ -14,8 +14,12 @@ class SelectNotebook extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.currentNote.id !== nextProps.currentNote.id ) {
-      this.setState({ notebookId: nextProps.currentNote.notebook_id });
+    if (this.props.currentNote && nextProps.currentNote) {
+      if (this.props.currentNote.id !== nextProps.currentNote.id ) {
+        this.setState({ notebookId: nextProps.currentNote.notebook_id });
+      }
+    } else {
+      this.setState({ notebookId: this.props.notebooks[0] });
     }
   }
 

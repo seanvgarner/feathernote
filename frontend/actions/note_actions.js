@@ -44,7 +44,7 @@ export function getAllNotes() {
 export function getOneNote(id) {
   return (dispatch) => {
     return APIUtil.getOneNote(id).then(
-      (note) => dispatch(receiveNote(note))
+      (note) => dispatch(switchNote(note))
     );
   };
 }
