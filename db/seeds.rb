@@ -26,7 +26,7 @@ note2 = Note.create!(
   title: 'THESE ARE VERY USEFUL FACTS',
   body: "<ol><li>Literally banging your head against a wall <span style=\"color: rgb(102, 163, 224);\">burns 150 calories</span> an hour.</li><li>Pteronophobia is the fear of being tickled by feathers! <span style=\"color: rgb(102, 185, 102);\">(...Not by featherNOTES)</span></li><li>You cannot snore and dream at the same time. <span style=\"color: rgb(255, 153, 0);\">CHALLENGE ACCEPTED.</span></li><li><span style=\"color: rgb(0, 0, 0);\">Catfish are the only animals that naturally have an odd number of whiskers.</span></li><li><span style=\"color: rgb(0, 0, 0);\">The first alarm clock could only ring at 4am. </span><span style=\"color: rgb(230, 0, 0); background-color: rgb(250, 204, 204);\">OOOOOOF.</span></li><li><span style=\"color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);\">A crocodile cannot poke its tongue out :P</span></li><li><span style=\"color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);\">Pirates wore earrings because they believed it improved their eyesight.</span></li><li><span style=\"color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);\">Hamsters run up to 8 miles at night on a wheel. </span><span style=\"color: rgb(194, 133, 255); background-color: rgb(255, 255, 255);\">#goals </span></li><li><span style=\"color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);\">A sheep, a duck and a rooster were the first passengers in a hot air balloon.</span></li><li><span style=\"color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);\"> ....</span></li></ol>",
   author_id: guest.id,
-  notebook_id: notebook1.id)
+  notebook_id: notebook4.id)
 
 note3 = Note.create!(
   title: "A Haiku or Two for You",
