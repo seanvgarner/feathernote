@@ -99,21 +99,26 @@ h4 {
   cursor: pointer;
 }
 
-.logout {
-  margin-top: 15px;
-  margin-left: 15px;
-  background-image: image_url("logout.png");
+.profile-btn {
+  margin: 15px 15px;
+  display: block;
+  height: 40px;
+  width: 40px;
+  float: left;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
-.logout:hover {
+.profile-btn:hover {
   cursor: pointer;
 }
 
 .logout-container {
   position: fixed;
-  bottom: 12px;
+  bottom: 0;
   left: 0;
   border-top: 1px solid #ececec;
   background-color: #f8f8f8;
   width: 72px;
+  height: 80px;
 }

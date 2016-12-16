@@ -1,0 +1,96 @@
+.profile-view-wrapper {
+  box-sizing: border-box;
+  padding: 20px;
+  display: block;
+  height: 100%;
+  border-top: 3px solid rgba(236, 236, 236, 0.7);
+  border-right: 3px solid rgba(236, 236, 236, 0.7);
+}
+
+
+.avatar-preview {
+  margin: 0 auto;
+  display: block;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 25px;
+}
+
+.profile-btns-wrapper {
+  display: block;
+  width: 370px;
+  margin: 0 auto;
+}
+
+.submit-avatar {
+  display: block;
+  box-sizing: border-box;
+  float: left;
+  height: 33px;
+  width: 177px;
+  background-color: #2dbe60;
+  border: 1px solid #2dbe60;
+  color: #fff;
+  margin: 0 4px;
+  padding: 9px 45px;
+  border-radius: 5px;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 13px;
+}
+
+.submit-avatar:hover {
+  background-color: #28a955;
+  border: 1px solid #28a955;
+  cursor: pointer;
+}
+
+.choose-file-button input {
+  display: none;
+}
+
+.choose-file-button {
+  display: block;
+  box-sizing: border-box;
+  float: right;
+  height: 33px;
+  width: 177px;
+  background-color: #ececec;
+  border: 1px solid #d9d9d9;
+  color: #606060;
+  margin: 0 4px;
+  padding: 9px 53px;
+  border-radius: 5px;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 13px;
+}
+
+.choose-file-button:hover {
+  background-color: #d9d9d9;
+  border: 1px solid #d1d1d1;
+  cursor: pointer;
+}
+
+.logout-in-modal {
+  margin-top: 60px;
+  margin-left: 185px;
+  width: 70px;
+  text-align: center;
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: 'Pontano Sans', sans-serif;
+  border-bottom: 1px solid transparent;
+  color: #848484;
+}
+
+.logout-in-modal:hover {
+  cursor: pointer;
+  color: black;
+  border-bottom: 1px solid #696969;
+}

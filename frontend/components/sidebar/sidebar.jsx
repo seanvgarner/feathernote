@@ -4,6 +4,7 @@ import NotebookIndexContainer from '../notebooks/notebooks_index_container';
 import TagsIndexContainer from '../tags/tags_index_container';
 import ProfileContainer from './profile_container';
 import { NotebooksStyle } from '../modal_styles/notebooks_style';
+import { ProfileStyle } from '../modal_styles/profile_style';
 
 class Sidebar extends React.Component {
 
@@ -57,7 +58,7 @@ class Sidebar extends React.Component {
   }
 
   toggleProfile(e) {
-    this.setState({ profileModalOpen: !this.state.notebooksModalOpen });
+    this.setState({ profileModalOpen: !this.state.profileModalOpen });
   }
 
   toggleNotebooks(e) {
@@ -105,7 +106,9 @@ class Sidebar extends React.Component {
             <div className="notebooks-btn icon" onClick={ this.toggleNotebooks }></div>
             <div className="tags-btn icon" onClick={ this.toggleTags }></div>
             <div className="logout-container">
-              <div onClick={ this.toggleProfile } className="logout icon"></div>
+              <div className="profile-btn">
+                <img src={currentUser.image_url} onClick={ this.toggleProfile } />
+              </div>
             </div>
           </div>
           <Modal
@@ -125,11 +128,11 @@ class Sidebar extends React.Component {
           </Modal>
 
           <Modal
-            style={ NotebooksStyle }
+            style={ ProfileStyle }
             isOpen={this.state.profileModalOpen}
             onRequestClose={ this.closeProfileModal}
             contentLabel="Modal">
-            <ProfileContainer closeProfileModal={ this.closeTagsModal} logout={ this.logoutCurrentUser }/>
+            <ProfileContainer closeProfileModal={ this.closeTagsModal} currentUrl={ currentUser.image_url } logout={ this.logoutCurrentUser }/>
           </Modal>
         </div>
       );

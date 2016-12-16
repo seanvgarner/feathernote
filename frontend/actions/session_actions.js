@@ -56,3 +56,11 @@ export function logout() {
       () => dispatch(receiveLogout()));
   };
 }
+
+export function updateUser(user, formData) {
+  return (dispatch) => {
+    return APIUtil.updateUser(user, formData).then(
+      (currentUser) => dispatch(receiveCurrentUser(currentUser))
+    );
+  };
+}
