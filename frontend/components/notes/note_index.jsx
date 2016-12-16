@@ -6,7 +6,7 @@ class NoteIndex extends React.Component {
     super(props);
   }
 
-  componentWillReceiveProps(nextProps){
+  componentWillReceiveProps(nextProps) {
     if ( !this.props.currentNote && nextProps.notes.length > 0){
       this.props.switchNote(nextProps.notes[0]);
     }
@@ -15,7 +15,7 @@ class NoteIndex extends React.Component {
         this.props.getAllNotes();
       }
     }
-    if (this.props.notes.length === nextProps.notes.length + 1) {
+    if (this.props.notes.length > nextProps.notes.length) {
       this.props.switchNote(nextProps.notes[0]);
     }
   }

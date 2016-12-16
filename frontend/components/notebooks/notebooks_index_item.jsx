@@ -16,6 +16,7 @@ class NotebooksIndexItem extends React.Component {
   }
 
   handleSelectNotebook() {
+
     this.props.switchNotebook(this.props.notebook);
     this.props.closeInitialModal();
   }

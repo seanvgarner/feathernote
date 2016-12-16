@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { switchNotebook } from '../../actions/notebook_actions';
+import { switchNote } from '../../actions/note_actions';
 import { sortedNotes } from '../../reducers/selectors';
 import NotebooksIndexItem from './notebooks_index_item';
 
@@ -14,7 +15,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    switchNotebook: (notebook) => dispatch(switchNotebook(notebook))
+    switchNotebook: (notebook) => dispatch(switchNotebook(notebook)),
+    switchNote: (note) => dispatch(switchNote(note))
   };
 };
 
