@@ -66,14 +66,33 @@
   cursor: default;
   opacity: 0.5;
 }
+
+.detail-notebook-icon {
+  display: block;
+  float: left;
+  width: 30px;
+  height: 30px;
+  background-image: image_url('detail-notebook.png');
+  background-size: cover;
+}
 .dropdown-notebook-menu {
   float: left;
+}
+
+.detail-tags-icon {
+  margin-left: 5px;
+  display: block;
+  float: left;
+  width: 30px;
+  height: 30px;
+  background-image: image_url('detail-tag.png');
+  background-size: cover;
 }
 
 .tags-select-container {
   display: block;
   height: 33px;
-  width: 549px;
+  width: 415px;
   float: left;
   overflow: hidden;
 }

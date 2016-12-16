@@ -8,6 +8,7 @@ class TagIndexItem extends React.Component {
   }
 
   handleSelect(e) {
+    this.props.getAllNotes();
     this.props.switchTag(this.props.tag);
     this.props.closeTagsModal();
   }
@@ -15,6 +16,7 @@ class TagIndexItem extends React.Component {
   handleDelete(e) {
     e.stopPropagation();
     this.props.deleteTag(this.props.tag);
+    this.props.getAllNotes();
 
     this.props.switchTag(null);
   }

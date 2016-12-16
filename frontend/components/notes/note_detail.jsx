@@ -80,7 +80,9 @@ class NoteDetail extends React.Component {
           <div className="detail-wrapper">
             <header className="detail-header group">
             <div onClick={ this.handleSubmit } className={ saveButton }>Save</div>
+            <div className="detail-notebook-icon"></div>
             <SelectNotebookContainer />
+            <div className="detail-tags-icon"></div>
             <TagsSelectContainer />
             </header>
               <input type="text"
