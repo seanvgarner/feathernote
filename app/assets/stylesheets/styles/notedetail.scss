@@ -70,11 +70,12 @@
   float: left;
 }
 
-.tags-select_container {
+.tags-select-container {
   display: block;
   height: 33px;
-  width: 200px;
+  width: 549px;
   float: left;
+  overflow: hidden;
 }
 
 .note-detail-title-input {

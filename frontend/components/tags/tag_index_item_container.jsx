@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { deleteTag, switchTag } from '../../actions/tag_actions';
+import { deleteTag, switchTag, getTags } from '../../actions/tag_actions';
 import TagIndexItem from './tag_index_item';
 
 const mapStateToProps = (state, ownProps) => {
@@ -11,7 +11,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     deleteTag: (tag) => dispatch(deleteTag(tag)),
-    switchTag: (tag) => dispatch(switchTag(tag))
+    switchTag: (tag) => dispatch(switchTag(tag)),
+    getTags: () => dispatch(getTags())
   };
 };
 

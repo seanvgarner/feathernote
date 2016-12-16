@@ -37,7 +37,7 @@ class TagsSelect extends React.Component {
 
   render() {
     return(
-      <div className="tags-select-container">
+      <div className="tags-select-container group">
         <ReactTags tags={ this.state.tags }
             labelField={'name'}
             handleDelete={ this.deleteTagging }

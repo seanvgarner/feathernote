@@ -24,7 +24,7 @@ class TagIndexItem extends React.Component {
       <li className="tag-index-item" onClick={ this.handleSelect }>
         <div className="delete-x" onClick={ this.handleDelete }>x</div>
         <div className="tag-name-wrapper">
-          { this.props.tag.name }
+          <p>{ this.props.tag.name }</p>
         </div>
       </li>
     );
