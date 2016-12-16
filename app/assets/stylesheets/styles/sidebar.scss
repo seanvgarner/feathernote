@@ -54,6 +54,7 @@ h4 {
 
 .new-note-btn {
   background-image: image_url("add-note.png");
+  margin-bottom: 120px;
 }
 
 .new-note-btn:hover {
@@ -63,14 +64,15 @@ h4 {
 
 
 .search-btn {
+  display: none;
   margin-bottom: 80px;
   background-image: image_url("search.png");
 }
 
-.search-btn:hover {
-  background-image: image_url("search-hover.png");
-  cursor: pointer;
-}
+// .search-btn:hover {
+//   background-image: image_url("search-hover.png");
+//   cursor: pointer;
+// }
 
 .all-notes-btn {
   background-image: image_url("all-notes.png");
