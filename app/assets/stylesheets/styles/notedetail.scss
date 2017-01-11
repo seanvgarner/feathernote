@@ -67,6 +67,14 @@
   opacity: 0.5;
 }
 
+.detail-notebook-icon {
+  display: block;
+  float: left;
+  width: 30px;
+  height: 30px;
+  background-image: image-url("detail-notebook.png");
+  background-size: cover;
+}
 
 .dropdown-notebook-menu {
   float: left;
