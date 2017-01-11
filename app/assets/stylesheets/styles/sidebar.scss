@@ -53,12 +53,12 @@ h4 {
 }
 
 .new-note-btn {
-  background-image: image_url("add-note.png");
+  background-image: image-url("add-note.png");
   margin-bottom: 120px;
 }
 
 .new-note-btn:hover {
-  background-image: image_url("add-note-hover.png");
+  background-image: image-url("add-note-hover.png");
   cursor: pointer;
 }
 
@@ -66,7 +66,7 @@ h4 {
 .search-btn {
   display: none;
   margin-bottom: 80px;
-  background-image: image_url("search.png");
+  background-image: image-url("search.png");
 }
 
 // .search-btn:hover {
@@ -75,29 +75,29 @@ h4 {
 // }
 
 .all-notes-btn {
-  background-image: image_url("all-notes.png");
+  background-image: image-url("all-notes.png");
 }
 
 .all-notes-btn:hover {
-  background-image: image_url("all-notes-hover.png");
+  background-image: image-url("all-notes-hover.png");
   cursor: pointer;
 }
 
 .notebooks-btn {
-  background-image: image_url("note-book.png");
+  background-image: image-url("note-book.png");
 }
 
 .notebooks-btn:hover {
-  background-image: image_url("note-book-hover.png");
+  background-image: image-url("note-book-hover.png");
   cursor: pointer;
 }
 
 .tags-btn {
-  background-image: image_url("tags.png");
+  background-image: image-url("tags.png");
 }
 
 .tags-btn:hover {
-  background-image: image_url("tags-hover.png");
+  background-image: image-url("tags-hover.png");
   cursor: pointer;
 }
 
