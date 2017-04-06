@@ -15,10 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
 
-  window.store = store;
-  window.receiveAllNotes = receiveAllNotes;
-  window.getAllNotes = getAllNotes;
-
   Modal.setAppElement(document.body);
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={ store }/>, root);
