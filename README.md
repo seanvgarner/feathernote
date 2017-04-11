@@ -2,7 +2,7 @@
 
 [FeatherNote live][heroku]
 
-[heroku]: https://feathernotes.herokuapp.com/#/
+[heroku]: http://feathernotes.herokuapp.com/#/
 
 FeatherNote is a full-stack web application inspired by Evernote.  It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Redux architectural framework on the frontend.  
 
@@ -44,4 +44,4 @@ Searching notes is a standard feature of Evernote. This search will look go thro
 
 ### AutoSave
 
-This feature is a staple in Evernote note-taking. It will monitor user input within the note and its notebook dropdown and tag input. It will set a short timer with setTimeOut after input has stopped and if that timer is reached before the user begins putting in more input, it will trigger a save. if the user keeps inputting, then the timer gets cleared. 
+This feature is a staple in Evernote note-taking. It will monitor user input within the note and its notebook dropdown and tag input. It will set a short timer with setTimeOut after input has stopped and if that timer is reached before the user begins putting in more input, it will trigger a save. if the user keeps inputting, then the timer gets cleared.
