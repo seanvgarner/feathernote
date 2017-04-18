@@ -76,12 +76,6 @@ note10 = Note.create!(
   author_id: guest.id,
   notebook_id: notebook2.id)
 
-note1 = Note.create!(
-  title: 'Welcome to Feathernote!',
-  body: "<p>Remembering everything is hard. Feathernote was designed so you don't have to. This awesome note-taking app lets you organize your notes into specific <strong>notebooks </strong>for easy browsing, <span style=\"background-color: rgb(255, 255, 255);\">rich-text editing so you can really </span><span style=\"background-color: rgb(255, 255, 102);\">highlight</span><span style=\"background-color: rgb(255, 255, 255);\"> what you want to </span><strong style=\"background-color: rgb(255, 255, 255); color: rgb(153, 51, 255);\"><em><u>stand out</u></em></strong><span style=\"background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);\">.</span></p><p><br></p><p><br></p><p><strong style=\"background-color: rgb(255, 255, 255); color: rgb(102, 185, 102);\">Core Things To Play Around With:</strong></p><ul><li><span style=\"color: rgb(102, 185, 102);\">notes</span></li><li><span style=\"color: rgb(102, 185, 102);\">notebooks</span></li><li><span style=\"color: rgb(102, 185, 102);\">tags</span></li></ul><p><br></p><p><span style=\"color: rgb(0, 0, 0);\">Take a look around! Start by hitting the </span><span style=\"color: rgb(102, 185, 102);\">+ </span><span style=\"color: rgb(0, 0, 0);\">to add a New Note.</span></p>",
-  author_id: guest.id,
-  notebook_id: notebook5.id)
-
 
 
 
@@ -91,19 +85,18 @@ tag3 = Tag.create!(name: "smile!", author_id: guest.id)
 tag4 = Tag.create!(name: "food", author_id: guest.id)
 tag5 = Tag.create!(name: "code", author_id: guest.id)
 
-tagging1 = Tagging.create!(tag_id: tag1.id, note_id: note1.id)
 tagging2 = Tagging.create!(tag_id: tag1.id, note_id: note2.id)
 tagging3 = Tagging.create!(tag_id: tag1.id, note_id: note4.id)
 tagging4 = Tagging.create!(tag_id: tag1.id, note_id: note5.id)
 tagging5 = Tagging.create!(tag_id: tag1.id, note_id: note6.id)
 tagging6 = Tagging.create!(tag_id: tag1.id, note_id: note8.id)
 tagging7 = Tagging.create!(tag_id: tag1.id, note_id: note9.id)
-tagging8 = Tagging.create!(tag_id: tag2.id, note_id: note1.id)
+
 tagging9 = Tagging.create!(tag_id: tag2.id, note_id: note2.id)
 tagging10 = Tagging.create!(tag_id: tag2.id, note_id: note3.id)
 tagging11 = Tagging.create!(tag_id: tag2.id, note_id: note6.id)
 tagging12 = Tagging.create!(tag_id: tag2.id, note_id: note8.id)
-tagging13 = Tagging.create!(tag_id: tag3.id, note_id: note1.id)
+
 tagging14 = Tagging.create!(tag_id: tag3.id, note_id: note2.id)
 tagging15 = Tagging.create!(tag_id: tag3.id, note_id: note3.id)
 tagging16 = Tagging.create!(tag_id: tag3.id, note_id: note8.id)
