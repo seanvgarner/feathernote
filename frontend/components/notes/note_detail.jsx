@@ -3,7 +3,10 @@ import ReactQuill from 'react-quill';
 import SelectNotebookContainer from '../notebooks/select_notebook_container';
 import TagsSelectContainer from '../tags/tags_select_container';
 
+
 class NoteDetail extends React.Component {
+
+
   constructor(props) {
     super(props);
     this.state = this.props.currentNote || {
@@ -58,6 +61,7 @@ class NoteDetail extends React.Component {
   }
 
   render() {
+
     let saveButton = "save-button";
     if (!this.state.title) {
       saveButton += "-disabled";
@@ -94,7 +98,23 @@ class NoteDetail extends React.Component {
                 <ReactQuill
                   theme="snow"
                   value={this.state.body}
-                  onChange={ this.updateBody }/>
+                  onChange={ this.updateBody }
+                  modules={{
+                    toolbar: [
+                      [{ 'header': [1, 2, false] }],
+                      ['bold', 'italic', 'underline','strike', 'blockquote'],
+                      [{'list': 'ordered'}, {'list': 'bullet'}, {'indent': '-1'}, {'indent': '+1'}],
+                      ['link', 'image'],
+                      [{ 'color': [] }, { 'background': [] }],
+                      ['clean']
+                    ],
+                  }}
+                  formats={[
+                    'header',
+                    'bold', 'italic', 'underline', 'strike', 'blockquote',
+                    'list', 'bullet', 'indent', 'color', 'background',
+                    'link', 'image'
+                  ]}/>
               </div>
           </div>
         </div>
@@ -102,6 +122,7 @@ class NoteDetail extends React.Component {
     }
   }
 }
+
 
 
 export default NoteDetail;
