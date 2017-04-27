@@ -125,4 +125,6 @@ class NoteDetail extends React.Component {
 
 
 
+
+
 export default NoteDetail;
